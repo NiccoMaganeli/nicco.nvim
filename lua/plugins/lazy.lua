@@ -12,8 +12,8 @@ function clean_all_packages()
   print("All packages cleaned")
 end
 
-vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Opens [l]azy dashboard" })
-vim.keymap.set("n", "<leader>pa", sync_all_packages, { desc = "Sync all plugins in Lazy" })
-vim.keymap.set("n", "<leader>pc", clean_all_packages, { desc = "Clean all unused plugins" })
+vim.keymap.set("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Opens lazy dashboard" })
+vim.keymap.set("n", "<leader>la", sync_all_packages, { desc = "Sync all plugins in Lazy" })
+vim.keymap.set("n", "<leader>lc", clean_all_packages, { desc = "Clean all unused plugins" })
 
 return {}

@@ -1,8 +1,9 @@
 -- NOTE: to understand what each configuration is doing here are some useful commands
 -- :help vim.opt
 -- :help option-list (this gives a whole list which is useful to search for options)
+
 vim.opt.relativenumber = true
-vim.opt.mouse = "a" -- Usefol for resizing splits
+vim.opt.mouse = "a" -- Useful for resizing splits
 vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
@@ -21,13 +22,15 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
+vim.g.have_nerd_font = true
+
 -- Keymaps
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [d]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [d]iagnostic message" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [e]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [q]uickfix list" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic error messages" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic quickfix list" })
 
 vim.keymap.set("n", "<left>", "<cmd>echo \"Use h to move\"<CR>")
 vim.keymap.set("n", "<up>", "<cmd>echo \"Use k to move\"<CR>")
@@ -39,7 +42,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 
--- NOTE: another helpful command :help lua-guide-autocommands
+-- NOTE: Another helpful command :help lua-guide-autocommands
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("highlight-on-yank", { clear = true }),
