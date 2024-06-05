@@ -28,8 +28,6 @@ return {
     pcall(telescope.load_extension, "fzf")
     pcall(telescope.load_extension, "ui-select")
 
-    vim.g.register_which_key_path("<leader>s", "+Telescope")
-
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search help" })
     vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Search keymaps" })
