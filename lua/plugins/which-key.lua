@@ -5,9 +5,12 @@ return {
     local which_key = require("which-key")
     which_key.setup()
 
-    -- Document a few prefixes
-    which_key.register({
-      ["<leader>l"] = { name = "+Lazy management", _ = "which_key_ignore" }
-    })
-  end
+    vim.g.register_which_key_path = function(keymap, name)
+      which_key.register({
+        [keymap] = { name = name, _ = "which_key_ignore" },
+      })
+    end
+
+    vim.g.register_which_key_path("<leader>l", "+Lazy management")
+  end,
 }
