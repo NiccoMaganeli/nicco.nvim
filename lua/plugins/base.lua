@@ -18,7 +18,6 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
-vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
@@ -40,6 +39,8 @@ vim.keymap.set("n", "<down>", "<cmd>echo \"Use j to move\"<CR>")
 vim.keymap.set("n", "<leader>c", "<cmd>bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Go to next buffer" })
 vim.keymap.set("n", "[b", "<cmd>bprev<CR>", { desc = "Go to previous buffer" })
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open file explorer" })
 
 -- NOTE: Another helpful command :help lua-guide-autocommands
 vim.api.nvim_create_autocmd("TextYankPost", {

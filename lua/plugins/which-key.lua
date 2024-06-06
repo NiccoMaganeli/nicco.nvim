@@ -8,7 +8,6 @@ return {
     which_key.register({
       ["<leader>l"] = { name = "+Lazy", _ = "which_key_ignore" },
       ["<leader>s"] = { name = "+Telescope", _ = "which_key_ignore" },
-      ["<leader>b"] = { name = "+Buffer", _ = "which_key_ignore" },
     })
   end,
 }
