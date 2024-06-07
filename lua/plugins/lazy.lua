@@ -4,11 +4,13 @@ local lazy_opts = { wait = true, show = false }
 
 local function sync_all_packages()
   lazy.sync(lazy_opts)
+  vim.cmd("MasonToolsUpdate")
   print("All packages synced")
 end
 
 local function clean_all_packages()
   lazy.clean(lazy_opts)
+  vim.cmd("MasonToolsClean")
   print("All packages cleaned")
 end
 

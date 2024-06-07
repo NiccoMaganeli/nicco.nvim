@@ -42,6 +42,9 @@ vim.keymap.set("n", "[b", "<cmd>bprev<CR>", { desc = "Go to previous buffer" })
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open file explorer" })
 
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- NOTE: Another helpful command :help lua-guide-autocommands
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
