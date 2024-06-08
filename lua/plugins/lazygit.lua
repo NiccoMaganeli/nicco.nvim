@@ -14,7 +14,22 @@ return {
     { "<leader>lg", "<cmd>LazyGit<CR>", desc = "Open lazygit" },
   },
   config = function()
-    vim.g.lazygit_use_custom_config_file_path = 1
-    vim.g.lazygit_config_file_path = vim.fn.stdpath("config") .. "/lazygit_config.yaml"
+    vim.api.nvim_create_autocmd("BufWinEnter", {
+      desc = "Disable all highlights when opening Lazygit",
+      callback = function()
+        if LAZYGIT_BUFFER ~= nil then
+          vim.cmd("hi clear")
+        end
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("BufWinLeave", {
+      desc = "Enable highlights when Lazygit is closed",
+      callback = function()
+        if LAZYGIT_BUFFER == nil then
+          vim.cmd("colorscheme " .. vim.g.colors_name)
+        end
+      end,
+    })
   end,
 }
