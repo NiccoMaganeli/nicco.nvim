@@ -3,7 +3,8 @@ return {
   priority = 1000,
   init = function()
     vim.o.background = "dark"
-    vim.cmd.colorscheme("neofusion")
+    vim.g.current_colorscheme = "neofusion"
+    vim.cmd.colorscheme(vim.g.current_colorscheme)
   end,
   opts = {
     transparent_mode = true,

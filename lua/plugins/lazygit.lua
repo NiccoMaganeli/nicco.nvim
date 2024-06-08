@@ -18,7 +18,7 @@ return {
       desc = "Disable all highlights when opening Lazygit",
       callback = function()
         if LAZYGIT_BUFFER ~= nil then
-          vim.cmd("hi clear")
+          vim.cmd.hi("clear")
         end
       end,
     })
@@ -27,7 +27,7 @@ return {
       desc = "Enable highlights when Lazygit is closed",
       callback = function()
         if LAZYGIT_BUFFER == nil then
-          vim.cmd("colorscheme " .. vim.g.colors_name)
+          vim.cmd.colorscheme(vim.g.current_colorscheme)
         end
       end,
     })
