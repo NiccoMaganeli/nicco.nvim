@@ -21,6 +21,11 @@ vim.opt.inccommand = "split"
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+
 vim.g.have_nerd_font = true
 
 -- Keymaps
