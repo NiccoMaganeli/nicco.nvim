@@ -3,7 +3,7 @@
 -- :help option-list (this gives a whole list which is useful to search for options)
 
 vim.opt.relativenumber = true
-vim.opt.mouse = "a" -- Useful for resizing splits
+vim.opt.mouse = ""
 vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
