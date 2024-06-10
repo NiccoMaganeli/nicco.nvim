@@ -1,16 +1,12 @@
 return {
-  "rose-pine/nvim",
-  name = "rose-pine",
+  "scottmckendry/cyberdream.nvim",
+  lazy = false,
   priority = 1000,
+  opts = {
+    transparent = true,
+  },
   init = function()
     vim.o.background = "dark"
-    vim.g.current_colorscheme = "rose-pine"
-    vim.cmd.colorscheme(vim.g.current_colorscheme)
+    vim.cmd.colorscheme("cyberdream")
   end,
-  opts = {
-    styles = {
-      italic = false,
-      transparency = true,
-    },
-  },
 }

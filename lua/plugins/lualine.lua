@@ -2,7 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   requires = { "nvim-tree/nvim-web-devicons" },
   opts = {
-    theme = "rose-pine",
+    theme = require("lualine.themes.cyberdream"),
     inactive_sections = {},
     sections = {
       lualine_a = { "mode" },
