@@ -26,7 +26,7 @@ vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 
 -- Keymaps
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")

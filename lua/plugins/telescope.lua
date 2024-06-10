@@ -13,6 +13,7 @@ return {
       end,
     },
     "nvim-telescope/telescope-ui-select.nvim",
+    -- TODO: if I stick with Input font, remove this
     { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
   },
   config = function()
