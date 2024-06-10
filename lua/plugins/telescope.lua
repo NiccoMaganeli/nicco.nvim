@@ -3,7 +3,7 @@ return {
   event = "VimEnter",
   branch = "0.1.x",
   dependencies = {
-    "folke/which-key.nvim", -- IMPORTANT just used to load which-key first
+    "folke/which-key.nvim", -- NOTE: just used to load which-key first
     "nvim-lua/plenary.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
@@ -13,8 +13,6 @@ return {
       end,
     },
     "nvim-telescope/telescope-ui-select.nvim",
-    -- TODO: if I stick with Input font, remove this
-    { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
   },
   config = function()
     local telescope = require("telescope")

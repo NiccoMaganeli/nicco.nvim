@@ -1,3 +1,0 @@
-os:
-  edit: nvim --server /tmp/nvim-server.pipe --remote-send "<cmd>lua require('scripts.lazygit_open_file')('{{filename}}', '{{line}}')<CR>"
-  open: nvim --server /tmp/nvim-server.pipe --remote-send "<cmd>lua require('scripts.lazygit_open_file')('{{filename}}', '{{line}}')<CR>"
