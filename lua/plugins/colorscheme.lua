@@ -1,12 +1,13 @@
 return {
-  "scottmckendry/cyberdream.nvim",
+  "EdenEast/nightfox.nvim",
   lazy = false,
   priority = 1000,
   opts = {
-    transparent = true,
+    options = {
+      transparent = true,
+    },
   },
   init = function()
-    vim.o.background = "dark"
-    vim.cmd.colorscheme("cyberdream")
+    vim.cmd.colorscheme("carbonfox")
   end,
 }
