@@ -57,12 +57,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd("FileType", {
   desc = "Set `textwidth` at Markdown files",
-  pattern = "*.md",
+  pattern = "markdown",
   group = vim.api.nvim_create_augroup("define-text-width", { clear = true }),
   callback = function()
-    vim.o.textwidth = 120
+    vim.opt_local.textwidth = 120
+    vim.opt_local.colorcolumn = "+1" -- NOTE: Color one column after textwidth
   end,
 })
 
