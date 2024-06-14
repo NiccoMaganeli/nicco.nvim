@@ -57,5 +57,45 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  desc = "Set `textwidth` at Markdown files",
+  pattern = "*.md",
+  group = vim.api.nvim_create_augroup("text-width-define", { clear = true }),
+  callback = function()
+    vim.o.textwidth = 80
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  desc = "Change CWD to file's project root based on .git",
+  pattern = "*",
+  group = vim.api.nvim_create_augroup("change-cwd-to-root", { clear = true }),
+  callback = function()
+    local function is_root(path)
+      return vim.fn.isdirectory(path .. "/.git") == 1
+    end
+
+    local function find_git_root(path)
+      local parent_dir = vim.fn.fnamemodify(path, ":h")
+
+      if path == parent_dir then
+        return nil
+      elseif is_root(path) then
+        return path
+      else
+        return find_git_root(parent_dir)
+      end
+    end
+
+    local buf_path = vim.fn.expand("%:p:h")
+    local project_root = find_git_root(buf_path)
+
+    if project_root then
+      vim.fn.chdir(project_root)
+      print("Changed cwd to " .. project_root)
+    end
+  end,
+})
+
 -- Returning empty table because this file is only for base configs
 return {}
