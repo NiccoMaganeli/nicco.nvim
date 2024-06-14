@@ -60,9 +60,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("BufEnter", {
   desc = "Set `textwidth` at Markdown files",
   pattern = "*.md",
-  group = vim.api.nvim_create_augroup("text-width-define", { clear = true }),
+  group = vim.api.nvim_create_augroup("define-text-width", { clear = true }),
   callback = function()
-    vim.o.textwidth = 80
+    vim.o.textwidth = 120
   end,
 })
 
