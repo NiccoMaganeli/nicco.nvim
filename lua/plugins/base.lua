@@ -92,7 +92,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
     if project_root then
       vim.fn.chdir(project_root)
-      print("Changed cwd to " .. project_root)
     end
   end,
 })
