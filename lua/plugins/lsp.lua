@@ -84,13 +84,53 @@ return {
       yamlls = {},
       jsonls = {},
       gopls = {},
-      pylsp = {},
+      pylsp = {
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = { enabled = false },
+            },
+          },
+        },
+      },
+      elmls = {},
+      tailwindcss = {
+        filetypes = { "html", "elm" },
+        init_options = {
+          userLanguages = {
+            elm = "html",
+            html = "html",
+          },
+        },
+        settings = {
+          tailwindCSS = {
+            includeLanguages = {
+              elm = "html",
+              html = "html",
+            },
+            classAttributes = { "class", "className", "classList", "ngClass" },
+            experimental = {
+              classRegex = {
+                "\\bclass[\\s(<|]+\"([^\"]*)\"",
+                "\\bclass[\\s(]+\"[^\"]*\"[\\s+]+\"([^\"]*)\"",
+                "\\bclass[\\s<|]+\"[^\"]*\"\\s*\\+{2}\\s*\" ([^\"]*)\"",
+                "\\bclass[\\s<|]+\"[^\"]*\"\\s*\\+{2}\\s*\" [^\"]*\"\\s*\\+{2}\\s*\" ([^\"]*)\"",
+                "\\bclass[\\s<|]+\"[^\"]*\"\\s*\\+{2}\\s*\" [^\"]*\"\\s*\\+{2}\\s*\" [^\"]*\"\\s*\\+{2}\\s*\" ([^\"]*)\"",
+                "\\bclassList[\\s\\[\\(]+\"([^\"]*)\"",
+                "\\bclassList[\\s\\[\\(]+\"[^\"]*\",\\s[^\\)]+\\)[\\s\\[\\(,]+\"([^\"]*)\"",
+                "\\bclassList[\\s\\[\\(]+\"[^\"]*\",\\s[^\\)]+\\)[\\s\\[\\(,]+\"[^\"]*\",\\s[^\\)]+\\)[\\s\\[\\(,]+\"([^\"]*)\"",
+              },
+            },
+          },
+        },
+      },
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       "stylua",
       "black",
+      "elm-format",
     })
 
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

@@ -17,9 +17,12 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.opt.inccommand = "split"
 vim.opt.scrolloff = 10
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.wrap = false
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
@@ -27,8 +30,6 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
 -- Keymaps
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic error messages" })
@@ -47,6 +48,9 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open file explorer" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- NOTE: Another helpful command :help lua-guide-autocommands
 vim.api.nvim_create_autocmd("TextYankPost", {

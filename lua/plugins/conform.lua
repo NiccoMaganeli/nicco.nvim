@@ -1,3 +1,7 @@
+local function format_with_conform()
+  require("conform").format({ async = true, lsp_fallback = true })
+end
+
 return {
   "stevearc/conform.nvim",
   event = "BufWritePre",
@@ -5,9 +9,13 @@ return {
   keys = {
     {
       "<leader>f",
-      function()
-        require("conform").format({ async = true, lsp_fallback = true })
-      end,
+      format_with_conform,
+      mode = "",
+      desc = "Format buffer",
+    },
+    {
+      "<F3>",
+      format_with_conform,
       mode = "",
       desc = "Format buffer",
     },
@@ -21,6 +29,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       python = { "black" },
+      elm = { "elm-format" },
     },
   },
 }
