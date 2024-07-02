@@ -29,7 +29,7 @@ vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
--- Keymaps
+-- Key maps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic error messages" })
@@ -40,7 +40,7 @@ vim.keymap.set("n", "<up>", "<cmd>echo \"Use k to move\"<CR>")
 vim.keymap.set("n", "<right>", "<cmd>echo \"Use l to move\"<CR>")
 vim.keymap.set("n", "<down>", "<cmd>echo \"Use j to move\"<CR>")
 
-vim.keymap.set("n", "<leader>c", "<cmd>bd<CR>", { desc = "Close buffer" })
+vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Go to next buffer" })
 vim.keymap.set("n", "[b", "<cmd>bprev<CR>", { desc = "Go to previous buffer" })
 
@@ -58,16 +58,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight-on-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  desc = "Set `textwidth` at Markdown files",
-  pattern = "markdown",
-  group = vim.api.nvim_create_augroup("define-text-width", { clear = true }),
-  callback = function()
-    vim.opt_local.textwidth = 120
-    vim.opt_local.colorcolumn = "+1" -- NOTE: Color one column after textwidth
   end,
 })
 
@@ -101,5 +91,5 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
--- Returning empty table because this file is only for base configs
+-- Returning empty table because this file is only for base configurations
 return {}

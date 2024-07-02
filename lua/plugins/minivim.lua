@@ -4,7 +4,7 @@ return {
     -- NOTE: Better Around/Inside objects
     require("mini.ai").setup({ n_lines = 500 })
 
-    -- NOTE: Add/delete/replace surround brackes/quotes/etc
+    -- NOTE: Add/delete/replace surround brackets/quotes/etc
     require("mini.surround").setup()
 
     -- NOTE: Show buffers on top

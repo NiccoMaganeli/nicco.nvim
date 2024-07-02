@@ -2,13 +2,6 @@ return {
   "nvim-neorg/neorg",
   lazy = false,
   version = "*",
-  dependencies = {
-    {
-      "vhyrro/luarocks.nvim",
-      priority = 1000,
-      opts = {},
-    },
-  },
   opts = {
     load = {
       ["core.defaults"] = {},

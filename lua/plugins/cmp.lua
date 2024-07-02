@@ -5,6 +5,10 @@ return {
     "L3MON4D3/LuaSnip",
     "hrsh7th/cmp-nvim-lsp",
   },
+  init = function()
+    vim.opt.spell = true
+    vim.opt.spelllang = { "en_us" }
+  end,
   config = function()
     local cmp = require("cmp")
     local lua_snip = require("luasnip")
@@ -29,6 +33,15 @@ return {
         { name = "luasnip" },
         { name = "path" },
         { name = "neorg" },
+        {
+          name = "spell",
+          option = {
+            keep_all_entries = false,
+            enable_in_context = function()
+              return true
+            end,
+          },
+        },
       },
     })
   end,

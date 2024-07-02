@@ -4,10 +4,11 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
+    "kevinhwang91/nvim-ufo",
   },
   config = function()
     local harpoon = require("harpoon")
-    harpoon.setup()
+    harpoon.setup({})
 
     vim.keymap.set("n", "<leader>a", function()
       harpoon:list():add()
@@ -35,5 +36,8 @@ return {
     vim.keymap.set("n", "<C-S-N>", function()
       harpoon:list():next()
     end, { desc = "Toggle next buffer in Harpoon list" })
+  end,
+  init = function()
+    require("harpoon"):extend(require("harpoon.extensions").builtins.command_on_nav("UfoEnableFold"))
   end,
 }
