@@ -7,7 +7,7 @@ return {
   },
   init = function()
     vim.opt.spell = true
-    vim.opt.spelllang = { "en_us" }
+    vim.opt.spelllang = { "en_us", "pt_br" }
   end,
   config = function()
     local cmp = require("cmp")
