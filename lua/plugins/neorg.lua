@@ -4,8 +4,13 @@ return {
   version = "*",
   opts = {
     load = {
-      ["core.defaults"] = {},
       ["core.concealer"] = {},
+      ["core.defaults"] = {},
+      ["core.completion"] = {
+        config = {
+          engine = "nvim-cmp",
+        },
+      },
       ["core.dirman"] = {
         config = {
           workspaces = {
@@ -14,11 +19,7 @@ return {
           default_workspace = "notes",
         },
       },
-      ["core.completion"] = {
-        config = {
-          engine = "nvim-cmp",
-        },
-      },
+      ["core.export"] = {},
     },
   },
   init = function()
